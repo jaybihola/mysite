@@ -50,9 +50,8 @@ export const Home: React.FC<homeProps> = ({}) => {
 
         <Title level={4}>Socials</Title>
         <Text>
-          Note, this is just a landing page as the site is still a work in
-          progress. Check back later for more. In the meantime, check out my
-          socials!
+          This site is still a work in progress. Check back later for more. In
+          the meantime, check out my socials!
         </Text>
         <Socials socials={mySocials} />
       </Space>
