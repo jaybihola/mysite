@@ -1,14 +1,26 @@
 import React from "react";
+import { Button, Space } from "antd";
 
-export type SocialType = {
+export type socialType = {
   name: string;
   link: string;
-  icon: React.ReactNode | string;
+  icon?: React.ReactNode | string;
 };
 
 interface SocialsProps {
-  socials: SocialType[];
+  socials: socialType[];
 }
 export const Socials: React.FC<SocialsProps> = ({ socials }) => {
-  return <div></div>;
+  return (
+    <Space direction="horizontal">
+      {socials.map((social) => {
+        return (
+          <Button href={social.link} rel="noreferrer" key={social.name}>
+            {social.icon ? social.icon : null}
+            {social.name}
+          </Button>
+        );
+      })}
+    </Space>
+  );
 };

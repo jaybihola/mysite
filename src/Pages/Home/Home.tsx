@@ -1,11 +1,17 @@
 import React from "react";
 import { Space, Typography } from "antd";
 import { Skills, skillType } from "../../Components/Skills";
-import { programmingSkills, frameworksSkills, toolsSkills } from "./helpers";
+import {
+  programmingSkills,
+  frameworksSkills,
+  toolsSkills,
+  mySocials,
+} from "./helpers";
 import { HomeContainer } from "./styles";
 
 // import the image me.jpeg
 import me from "../../Photos/me.jpeg";
+import { Socials } from "../../Components/Socials";
 
 const { Title, Text } = Typography;
 
@@ -17,7 +23,7 @@ export const Home: React.FC<homeProps> = ({}) => {
       <Space direction="vertical">
         <Space direction="horizontal">
           <div>
-            <Title level={2}>Hey, I'm Jay</Title>
+            <Title level={2}>Hey, I'm Jay Bihola</Title>
             <Title level={3}>
               I'm a software developer based out of Toronto
             </Title>
@@ -44,9 +50,11 @@ export const Home: React.FC<homeProps> = ({}) => {
 
         <Title level={4}>Socials</Title>
         <Text>
-          Note, this site is still a work in progress. Check back later for
-          more. In the meantime, check out my socials
+          Note, this is just a landing page as the site is still a work in
+          progress. Check back later for more. In the meantime, check out my
+          socials!
         </Text>
+        <Socials socials={mySocials} />
       </Space>
     </HomeContainer>
   );

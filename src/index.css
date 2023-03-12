@@ -1,7 +1,13 @@
 * {
     box-sizing: border-box;
     /*color: white;*/
-    background: #020402;
+    /*background: #020402;*/
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    background: black;
 }
 
 h2 {
