@@ -4,6 +4,9 @@ import { Skills, skillType } from "../../Components/Skills";
 import { programmingSkills, frameworksSkills, toolsSkills } from "./helpers";
 import { HomeContainer } from "./styles";
 
+// import the image me.jpeg
+import me from "../../Photos/me.jpeg";
+
 const { Title, Text } = Typography;
 
 interface homeProps {}
@@ -12,9 +15,27 @@ export const Home: React.FC<homeProps> = ({}) => {
   return (
     <HomeContainer>
       <Space direction="vertical">
-        <Title level={2}>Hey, I'm Jay</Title>
-        <Title level={3}>I'm a software developer based out of Toronto</Title>
-        <Text>I'm currently working at GoBolt as a developer.</Text>
+        <Space direction="horizontal">
+          <div>
+            <Title level={2}>Hey, I'm Jay</Title>
+            <Title level={3}>
+              I'm a software developer based out of Toronto
+            </Title>
+            <Space direction="vertical">
+              <Text>I'm currently working at GoBolt as a developer.</Text>
+              <Text>
+                I am also actively teaching C++, Python, and JavaScript to
+                students.
+              </Text>
+            </Space>
+          </div>
+          <div style={{ marginLeft: 30 }}>
+            <img
+              src={me}
+              style={{ borderRadius: 100, border: "white solid 2px" }}
+            />
+          </div>
+        </Space>
 
         <Title level={4}>Skills</Title>
         <Skills skills={programmingSkills} />

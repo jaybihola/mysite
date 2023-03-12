@@ -5,4 +5,5 @@ import { Space } from "antd";
 export const HomeContainer = styled(Space)`
   display: flex;
   justify-content: center;
+  margin-top: 20vh;
 `;
