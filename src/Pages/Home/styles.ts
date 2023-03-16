@@ -6,4 +6,5 @@ export const HomeContainer = styled(Space)`
   display: flex;
   justify-content: center;
   margin-top: 10vh;
+  margin-bottom: 10vh;
 `;

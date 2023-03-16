@@ -5,6 +5,7 @@ import {
   LinkedinOutlined,
   GithubOutlined,
   MailOutlined,
+  PaperClipOutlined,
 } from "@ant-design/icons";
 
 export const programmingSkills: skillType[] = [
@@ -48,5 +49,10 @@ export const mySocials: socialType[] = [
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/jaybihola",
     icon: <LinkedinOutlined />,
+  },
+  {
+    name: "Resume",
+    link: "https://www.dropbox.com/s/ymhex9t12m57kp7/Jay%20Bihola%20-%20Resume%202023.pdf?dl=0",
+    icon: <PaperClipOutlined />,
   },
 ];

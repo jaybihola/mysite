@@ -22,19 +22,22 @@ export const Home: React.FC<homeProps> = ({}) => {
     <HomeContainer>
       <Space direction="vertical">
         <Space direction="horizontal">
-          <div>
+          <Space direction="vertical" style={{ maxWidth: 500 }} size={"small"}>
             <Title level={2}>Hey, I'm Jay Bihola</Title>
             <Title level={3}>
               I'm a software developer based out of Toronto
             </Title>
             <Space direction="vertical">
-              <Text>I'm currently working at GoBolt as a developer.</Text>
+              <Text>
+                I'm currently working at GoBolt as a full stack developer on the
+                merchant team.
+              </Text>
               <Text>
                 I am also actively teaching C++, Python, and JavaScript to
-                students.
+                students. I have taught over 100 students in the past 3 years.
               </Text>
             </Space>
-          </div>
+          </Space>
           <div style={{ marginLeft: 30 }}>
             <img
               src={me}
@@ -48,11 +51,7 @@ export const Home: React.FC<homeProps> = ({}) => {
         <Skills skills={frameworksSkills} />
         <Skills skills={toolsSkills} />
 
-        <Title level={4}>Socials</Title>
-        <Text>
-          This site is still a work in progress. Check back later for more. In
-          the meantime, check out my socials!
-        </Text>
+        <Title level={4}>Social</Title>
         <Socials socials={mySocials} />
       </Space>
     </HomeContainer>

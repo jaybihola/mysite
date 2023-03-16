@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Home } from "./Pages/Home";
-import { ConfigProvider, Space, theme } from "antd";
+import { ConfigProvider, Layout, theme } from "antd";
 import styled from "styled-components";
+import { Footer } from "./Components/Footer";
+
+const { Content, Footer: AntdFooter } = Layout;
 
 const AppContainer = styled.div`
   margin-top: 10vh;
@@ -16,7 +19,14 @@ function App() {
         algorithm: theme.darkAlgorithm,
       }}
     >
-      <Home />
+      <Layout>
+        <Content>
+          <Home />
+        </Content>
+        <AntdFooter style={{ textAlign: "center" }}>
+          <Footer />
+        </AntdFooter>
+      </Layout>
     </ConfigProvider>
   );
 }
