@@ -8,14 +8,24 @@ import {
   mySocials,
 } from "./helpers";
 import { HomeContainer } from "./styles";
-
-// import the image me.jpeg
+import styled from "styled-components";
 import me from "../../Photos/me.jpeg";
 import { Socials } from "../../Components/Socials";
 
 const { Title, Text } = Typography;
 
 interface homeProps {}
+
+const StyledImg = styled.img`
+  border-radius: 100px;
+  border: white solid 3px;
+
+  transition: 0.2s;
+  &:hover {
+    border: #1890ff solid 4px;
+    scale: 1.2;
+  }
+`;
 
 export const Home: React.FC<homeProps> = ({}) => {
   return (
@@ -39,10 +49,7 @@ export const Home: React.FC<homeProps> = ({}) => {
             </Space>
           </Space>
           <div style={{ marginLeft: 30, marginTop: 10 }}>
-            <img
-              src={me}
-              style={{ borderRadius: 100, border: "white solid 4px" }}
-            />
+            <StyledImg src={me} />
           </div>
         </Space>
 

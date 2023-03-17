@@ -1,12 +1,20 @@
 import React from "react";
 import { Tag, Typography } from "antd";
-
+import styled from "styled-components";
 const { Text } = Typography;
 
 export type skillType = {
   name: string;
   icon?: string;
 };
+
+const StyledTag = styled(Tag)`
+  transition: 0.1s;
+  &:hover {
+    //scale: 1.1;
+    border: 1px solid #1890ff;
+  }
+`;
 
 interface skillsProps {
   skills: skillType[];
@@ -17,7 +25,7 @@ export const Skills: React.FC<skillsProps> = ({ skills }) => {
     <>
       {skills.map((skill) => {
         return (
-          <Tag key={skill.name}>
+          <StyledTag key={skill.name}>
             {skill.icon ? (
               <img
                 src={skill.icon}
@@ -31,7 +39,7 @@ export const Skills: React.FC<skillsProps> = ({ skills }) => {
               />
             ) : null}
             <Text> {skill.name}</Text>
-          </Tag>
+          </StyledTag>
         );
       })}
     </>
