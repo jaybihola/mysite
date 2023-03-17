@@ -22,7 +22,7 @@ export const Home: React.FC<homeProps> = ({}) => {
     <HomeContainer>
       <Space direction="vertical">
         <Space direction="horizontal" wrap align="center">
-          <Space direction="vertical" size={"small"}>
+          <Space direction="vertical" size={"small"} style={{ maxWidth: 500 }}>
             <Title level={2}>Hey, I'm Jay Bihola</Title>
             <Title level={3}>
               I'm a software developer based out of Toronto
@@ -38,10 +38,10 @@ export const Home: React.FC<homeProps> = ({}) => {
               </Text>
             </Space>
           </Space>
-          <div style={{ marginLeft: 30 }}>
+          <div style={{ marginLeft: 30, marginTop: 10 }}>
             <img
               src={me}
-              style={{ borderRadius: 100, border: "white solid 2px" }}
+              style={{ borderRadius: 100, border: "white solid 4px" }}
             />
           </div>
         </Space>
