@@ -20,7 +20,7 @@ function App() {
       }}
     >
       <Layout>
-        <Content>
+        <Content style={{ padding: `0 10px` }}>
           <Home />
         </Content>
         <AntdFooter style={{ textAlign: "center" }}>

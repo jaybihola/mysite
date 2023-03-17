@@ -12,7 +12,7 @@ interface SocialsProps {
 }
 export const Socials: React.FC<SocialsProps> = ({ socials }) => {
   return (
-    <Space direction="horizontal">
+    <Space direction="horizontal" wrap>
       {socials.map((social) => {
         return (
           <Button href={social.link} rel="noreferrer" key={social.name}>

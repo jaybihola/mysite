@@ -21,8 +21,8 @@ export const Home: React.FC<homeProps> = ({}) => {
   return (
     <HomeContainer>
       <Space direction="vertical">
-        <Space direction="horizontal">
-          <Space direction="vertical" style={{ maxWidth: 500 }} size={"small"}>
+        <Space direction="horizontal" wrap align="center">
+          <Space direction="vertical" size={"small"}>
             <Title level={2}>Hey, I'm Jay Bihola</Title>
             <Title level={3}>
               I'm a software developer based out of Toronto

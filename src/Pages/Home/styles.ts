@@ -7,4 +7,6 @@ export const HomeContainer = styled(Space)`
   justify-content: center;
   margin-top: 10vh;
   margin-bottom: 10vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
 `;
