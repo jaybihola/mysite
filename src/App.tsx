@@ -3,7 +3,7 @@ import { Home } from "./Pages/Home";
 import { ConfigProvider, Layout, theme, Alert, Menu } from "antd";
 import styled from "styled-components";
 import { Footer } from "./Components/Footer";
-import { menuItems, MenuItems } from "./helpers";
+import { menuItems } from "./helpers";
 
 const { Content, Footer: AntdFooter, Header: AntdHeader } = Layout;
 
