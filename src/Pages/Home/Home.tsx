@@ -48,7 +48,15 @@ export const Home: React.FC<homeProps> = ({}) => {
               </Text>
             </Space>
           </Space>
-          <div style={{ marginLeft: 30, marginTop: 10 }}>
+          <div
+            style={{
+              marginLeft: 30,
+              marginTop: 10,
+              alignContent: `center`,
+              justifyContent: `center`,
+              // align center
+            }}
+          >
             <StyledImg src={me} />
           </div>
         </Space>

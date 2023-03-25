@@ -52,7 +52,7 @@ export const mySocials: socialType[] = [
   },
   {
     name: "Resume",
-    link: "https://www.dropbox.com/s/ymhex9t12m57kp7/Jay%20Bihola%20-%20Resume%202023.pdf?dl=0",
+    link: "t.ly/jayresume",
     icon: <PaperClipOutlined />,
   },
 ];
