@@ -51,7 +51,7 @@ export const mySocials: socialType[] = [
     icon: <LinkedinOutlined />,
   },
   {
-    name: "Resume",
+    name: "My Resume",
     link: "https://l.biho.la/resume",
     icon: <PaperClipOutlined />,
   },
