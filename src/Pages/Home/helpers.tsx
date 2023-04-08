@@ -52,7 +52,7 @@ export const mySocials: socialType[] = [
   },
   {
     name: "Resume",
-    link: "https://t.ly/jayresume",
+    link: "https://l.biho.la/resume",
     icon: <PaperClipOutlined />,
   },
 ];
