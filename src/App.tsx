@@ -1,45 +1,42 @@
 import React, { useState } from "react";
 import { Home } from "./Pages/Home";
-import { ConfigProvider, Layout, theme, Alert, Menu } from "antd";
-import styled from "styled-components";
+import { About } from "./Pages/About";
+import { ConfigProvider, Layout, theme } from "antd";
 import { Footer } from "./Components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MainContainer } from "./Pages/MainContainer/MainContainer";
+import { colors } from "../helpers";
+import { Experience } from "./Pages/Experience";
 
 const { Content, Footer: AntdFooter, Header: AntdHeader } = Layout;
 
 function App() {
-  const [count, setCount] = useState(0);
-  const showMenu = true;
   return (
     <ConfigProvider
       theme={{
         algorithm: theme.darkAlgorithm,
+        token: {
+          colorPrimary: colors.primary,
+          colorSuccess: colors.success,
+          colorWarning: colors.warning,
+          colorError: colors.danger,
+          colorText: colors.text,
+          colorBgBase: colors.black,
+          fontSize: 16,
+        },
       }}
     >
-      <Layout>
-        <Router>
-          <Routes>
-            <Route path={"/"} element={<MainContainer />}>
-              <Route
-                index
-                element={
-                  <Content style={{ padding: `0 10px` }}>
-                    <Home />
-                  </Content>
-                }
-              />
-              <Route path="about" element={<div>about</div>} />
-              <Route path="projects" element={<div>projects</div>} />
-              <Route path="contact" element={<div>contact</div>} />
-            </Route>
-          </Routes>
-        </Router>
-
-        <AntdFooter style={{ textAlign: "center" }}>
-          <Footer />
-        </AntdFooter>
-      </Layout>
+      <Router>
+        <Routes>
+          <Route path={"/"} element={<MainContainer />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<div>projects</div>} />
+            <Route path="experience" element={<Experience />} />
+            <Route path="contact" element={<div>contact</div>} />
+          </Route>
+        </Routes>
+      </Router>
     </ConfigProvider>
   );
 }

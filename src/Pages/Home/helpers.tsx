@@ -36,7 +36,7 @@ export const toolsSkills: skillType[] = [
 
 export const mySocials: socialType[] = [
   {
-    name: "Email Me",
+    name: "Email",
     link: "mailto:hello@jaybihola.com",
     icon: <MailOutlined />,
   },
@@ -51,7 +51,7 @@ export const mySocials: socialType[] = [
     icon: <LinkedinOutlined />,
   },
   {
-    name: "My Resume",
+    name: "Resume",
     link: "https://l.biho.la/resume",
     icon: <PaperClipOutlined />,
   },

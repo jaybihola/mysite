@@ -1,6 +1,7 @@
 import React from "react";
 import { Tag, Typography } from "antd";
 import styled from "styled-components";
+import { colors } from "../../../helpers";
 const { Text } = Typography;
 
 export type skillType = {
@@ -12,7 +13,8 @@ const StyledTag = styled(Tag)`
   transition: 0.1s;
   &:hover {
     //scale: 1.1;
-    border: 1px solid #1890ff;
+    border: 1px solid ${colors.primary};
+    color: ${colors.primary};
   }
 `;
 
