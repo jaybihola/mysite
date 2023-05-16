@@ -16,10 +16,10 @@ export const AboutContainer = styled(Space)`
   }
 
   @media (${device.tablet}) {
-    margin: 10vh 20vw;
+    margin: 10vh 12vw;
   }
 
   @media (${device.laptop}) {
-    margin: 10vh 30vw;
+    margin: 10vh 20vw;
   }
 `;

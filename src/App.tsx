@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MainContainer } from "./Pages/MainContainer/MainContainer";
 import { colors } from "../helpers";
 import { Experience } from "./Pages/Experience";
+import { Projects } from "./Pages/Projects";
 
 const { Content, Footer: AntdFooter, Header: AntdHeader } = Layout;
 
@@ -22,6 +23,7 @@ function App() {
           colorError: colors.danger,
           colorText: colors.text,
           colorBgBase: colors.black,
+          colorLink: colors.primary,
           fontSize: 16,
         },
       }}
@@ -31,7 +33,7 @@ function App() {
           <Route path={"/"} element={<MainContainer />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="projects" element={<div>projects</div>} />
+            <Route path="projects" element={<Projects />} />
             <Route path="experience" element={<Experience />} />
             <Route path="contact" element={<div>contact</div>} />
           </Route>

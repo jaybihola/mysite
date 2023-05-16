@@ -1,12 +1,13 @@
 import React, { ReactNode, useState } from "react";
-import { Button, Collapse, Modal, CollapseProps, Space } from "antd";
+import { Button, Collapse, Modal, CollapseProps, Space, Tooltip } from "antd";
 
 interface CollapseModalProps {
   panels: {
-    header: string;
+    header: string | ReactNode;
     extra?: ReactNode;
     content: string | ReactNode;
     showModal: boolean;
+    modalTitle?: string;
     modalButtonText?: string;
     modalContent?: string | ReactNode;
   }[];
@@ -18,23 +19,29 @@ export const CollapseModal: React.FC<CollapseModalProps> = ({
   collapseProps,
 }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [modalTitle, setModalTitle] = useState<string>("");
   const [modalContent, setModalContent] = useState<string | ReactNode>("");
   return (
     <>
       <Modal
-        title="Basic Modal"
+        title={modalTitle}
         open={showModal}
         closable
         footer={<></>}
         onCancel={() => setShowModal(false)}
+        width={"30%"}
       >
         {modalContent}
       </Modal>
-      <Collapse {...collapseProps}>
+      <Collapse {...collapseProps} accordion={true}>
         {panels.map((panel, index) => {
           return (
             <Collapse.Panel
-              header={panel.header}
+              header={
+                <Tooltip title={"Click to expand or hide"}>
+                  {panel.header}
+                </Tooltip>
+              }
               key={index}
               extra={panel.extra}
             >
@@ -48,6 +55,7 @@ export const CollapseModal: React.FC<CollapseModalProps> = ({
                   <Button
                     onClick={() => {
                       setShowModal(!showModal);
+                      setModalTitle(panel.modalTitle || "");
                       setModalContent(panel.modalContent);
                     }}
                   >

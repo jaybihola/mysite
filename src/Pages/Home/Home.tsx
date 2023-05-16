@@ -37,10 +37,16 @@ export const Home: React.FC<homeProps> = ({}) => {
             <Title level={5} style={{ color: `${colors.primary}` }}>
               Hey, I'm
             </Title>
-            <Title>Jay Bihola.</Title>
+            <Space
+              direction={"vertical"}
+              align={"center"}
+              style={{ width: `100%` }}
+            >
+              <Title>Jay Bihola</Title>
+            </Space>
             <Text>
               I create cool things with code and teach others how to do the
-              same.
+              same. Get in touch with me to learn more!
             </Text>
           </Space>
           <div
@@ -49,7 +55,6 @@ export const Home: React.FC<homeProps> = ({}) => {
               marginTop: 10,
               alignContent: `center`,
               justifyContent: `center`,
-              // align center
             }}
           >
             <StyledImg src={me} />

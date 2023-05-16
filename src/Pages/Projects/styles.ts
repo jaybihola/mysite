@@ -3,7 +3,7 @@ import { Space } from "antd";
 import { device } from "../../../helpers";
 
 // center the component using style
-export const ExperienceContainer = styled(Space)`
+export const ProjectsContainer = styled(Space)`
   display: flex;
   justify-content: center;
 
