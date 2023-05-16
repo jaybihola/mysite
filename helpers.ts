@@ -28,4 +28,5 @@ export const colors = {
   danger: "#B33951",
   white: "#ffffff",
   black: "#1E1E24",
+  lightGray: "rgba(210,210,210,0.37)",
 };

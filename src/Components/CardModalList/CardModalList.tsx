@@ -1,6 +1,7 @@
 import React, { ReactNode, useState } from "react";
 import { Button, CardProps, Col, Modal, Row, Space, Typography } from "antd";
 import * as S from "./styles";
+import { Skills } from "../Skills";
 const { Text } = Typography;
 
 interface CardModalListProps {
@@ -15,13 +16,16 @@ interface CardModalListProps {
     modalContent?: string | ReactNode;
     modalFooter?: string | ReactNode;
     disabled?: boolean;
+    skills?: string[];
   }[];
   cardProps?: CardProps;
+  loading?: boolean;
 }
 
 export const CardModalList: React.FC<CardModalListProps> = ({
   entries,
   cardProps,
+  loading,
 }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalTitle, setModalTitle] = useState<string>("");
@@ -42,6 +46,11 @@ export const CardModalList: React.FC<CardModalListProps> = ({
       <Space direction={"horizontal"} wrap size={"large"}>
         <Row gutter={[16, 16]}>
           {entries.map((entry, index) => {
+            const skills = entry.skills?.map((skill) => {
+              return {
+                name: skill,
+              };
+            });
             return (
               <Col xs={24} sm={12} lg={8}>
                 <S.StyledCard
@@ -50,6 +59,7 @@ export const CardModalList: React.FC<CardModalListProps> = ({
                   bordered={false}
                   headStyle={{ textAlign: "center" }}
                   clickable={!entry.disabled && !!entry.showModal}
+                  loading={loading}
                 >
                   <Space direction={"vertical"} align={"center"}>
                     {entry.disabled && <Text>Details Coming Soon</Text>}
@@ -70,6 +80,7 @@ export const CardModalList: React.FC<CardModalListProps> = ({
                         )}
                       </>
                     )}
+                    {!!skills && <Skills skills={skills ?? { name: "" }} />}
                   </Space>
                 </S.StyledCard>
               </Col>

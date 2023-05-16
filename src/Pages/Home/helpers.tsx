@@ -17,12 +17,13 @@ export const programmingSkills: skillType[] = [
   { name: "PostgreSQL", icon: "https://cdn.svgporn.com/logos/postgresql.svg" },
   { name: "Python", icon: "https://cdn.svgporn.com/logos/python.svg" },
   { name: "C++", icon: "https://cdn.svgporn.com/logos/c-plusplus.svg" },
+  { name: "Java", icon: "https://cdn.svgporn.com/logos/java.svg" },
 ];
 
 export const frameworksSkills: skillType[] = [
   { name: "React", icon: "https://cdn.svgporn.com/logos/react.svg" },
   { name: "Rails", icon: "https://cdn.svgporn.com/logos/rails.svg" },
-  { name: "Django", icon: "https://cdn.svgporn.com/logos/django.svg" },
+  { name: "Flask", icon: "https://cdn.svgporn.com/logos/flask.svg" },
   { name: "PyTorch", icon: "https://cdn.svgporn.com/logos/python.svg" },
   { name: "Arduino", icon: "https://cdn.svgporn.com/logos/arduino.svg" },
 ];

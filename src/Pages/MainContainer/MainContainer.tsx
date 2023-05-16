@@ -10,12 +10,12 @@ const { Content, Footer: AntdFooter, Header: AntdHeader } = Layout;
 export const MainContainer: React.FC = () => {
   const navigate = useNavigate();
   const [selectedKey, setSelectedKey] = useState<[string]>();
+  const path = window.location.pathname;
 
   useEffect(() => {
-    const path = window.location.pathname;
     if (path === "/") setSelectedKey([""]);
     else setSelectedKey([path.slice(1)]);
-  }, []);
+  }, [path]);
 
   return (
     <>

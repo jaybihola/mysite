@@ -6,6 +6,8 @@ import { colors } from "../../../helpers";
 export const StyledCard = styled(Card)`
   cursor: ${(props: { clickable: boolean }) =>
     props.clickable ? "pointer" : "default"};
+  transition: all 0.2s ease-in-out;
+  border: 1px solid ${colors.black};
   &:hover {
     border: 1px solid ${colors.primary};
   }
