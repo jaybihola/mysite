@@ -31,6 +31,65 @@ export const CardModalList: React.FC<CardModalListProps> = ({
   const [modalTitle, setModalTitle] = useState<string>("");
   const [modalContent, setModalContent] = useState<string | ReactNode>("");
   const [modalFooter, setModalFooter] = useState<string | ReactNode>("");
+
+  const renderEntries = () => {
+    let columns: unknown[] = [];
+
+    entries.forEach((entry, index) => {
+      columns.push(renderCard(entry));
+    });
+
+    return (
+      <Row gutter={[8, 8]} style={{ width: `100%` }}>
+        {columns as any[]}
+      </Row>
+    );
+  };
+
+  const renderCard = (entry: CardModalListProps["entries"][0]) => {
+    const skills = entry.skills?.map((skill) => {
+      return {
+        name: skill,
+      };
+    });
+
+    return (
+      <Col xs={24} sm={12} lg={8}>
+        <S.StyledCard
+          title={entry.header}
+          extra={entry.extra}
+          bordered={false}
+          headStyle={{ textAlign: "center" }}
+          clickable={!entry.disabled && !!entry.showModal}
+          loading={loading}
+          style={{ height: "100%", width: "100%" }}
+        >
+          <Space direction={"vertical"} align={"center"}>
+            {entry.disabled && <Text>Details Coming Soon</Text>}
+            {!entry.disabled && (
+              <>
+                <div>{entry.cardContent}</div>
+                {entry.showModal && (
+                  <Button
+                    onClick={() => {
+                      setShowModal(!showModal);
+                      setModalTitle(entry.modalHeader || "");
+                      setModalContent(entry.modalContent);
+                      setModalFooter(entry.modalFooter);
+                    }}
+                  >
+                    {entry.modalButtonText}
+                  </Button>
+                )}
+              </>
+            )}
+            {!!skills && <Skills skills={skills ?? { name: "" }} />}
+          </Space>
+        </S.StyledCard>
+      </Col>
+    );
+  };
+
   return (
     <>
       <Modal
@@ -43,51 +102,12 @@ export const CardModalList: React.FC<CardModalListProps> = ({
       >
         {modalContent}
       </Modal>
-      <Space direction={"horizontal"} wrap size={"large"}>
-        <Row gutter={[16, 16]}>
-          {entries.map((entry, index) => {
-            const skills = entry.skills?.map((skill) => {
-              return {
-                name: skill,
-              };
-            });
-            return (
-              <Col xs={24} sm={12} lg={8}>
-                <S.StyledCard
-                  title={entry.header}
-                  extra={entry.extra}
-                  bordered={false}
-                  headStyle={{ textAlign: "center" }}
-                  clickable={!entry.disabled && !!entry.showModal}
-                  loading={loading}
-                >
-                  <Space direction={"vertical"} align={"center"}>
-                    {entry.disabled && <Text>Details Coming Soon</Text>}
-                    {!entry.disabled && (
-                      <>
-                        <div>{entry.cardContent}</div>
-                        {entry.showModal && (
-                          <Button
-                            onClick={() => {
-                              setShowModal(!showModal);
-                              setModalTitle(entry.modalHeader || "");
-                              setModalContent(entry.modalContent);
-                              setModalFooter(entry.modalFooter);
-                            }}
-                          >
-                            {entry.modalButtonText}
-                          </Button>
-                        )}
-                      </>
-                    )}
-                    {!!skills && <Skills skills={skills ?? { name: "" }} />}
-                  </Space>
-                </S.StyledCard>
-              </Col>
-            );
-          })}
-        </Row>
-      </Space>
+      {renderEntries()}
+      {/*<Space direction={"horizontal"} size={"large"} style={{ width: `100%` }}>*/}
+      {/*<Row gutter={[8, 8]} style={{ width: `100%` }}>*/}
+
+      {/*</Row>*/}
+      {/*</Space>*/}
     </>
   );
 };

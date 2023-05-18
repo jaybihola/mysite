@@ -13,6 +13,7 @@ export type skillType = {
 
 const StyledTag = styled(Tag)`
   transition: 0.1s;
+  margin-top: 4px;
   &:hover {
     //scale: 1.1;
     border: 1px solid ${colors.primary};
@@ -34,27 +35,28 @@ const StyledCheckableTag = styled(CheckableTag)`
 
 interface skillsProps {
   skills: skillType[];
-  skillClickHandler?: (skills: string[]) => void;
+  selectedSkills?: string[];
+  setSelectedSkills?: React.Dispatch<React.SetStateAction<string[]>>;
+  selectable?: boolean | ((skills: string[]) => void);
 }
 
 export const Skills: React.FC<skillsProps> = ({
   skills,
-  skillClickHandler,
+  selectable,
+  selectedSkills = [],
+  setSelectedSkills = () => {},
 }) => {
-  const [selectedSkills, setSelectedSkills] = React.useState<string[]>([]);
-
   const handleChange = (checked: boolean, skill: string) => {
     if (checked) {
       setSelectedSkills([...selectedSkills, skill]);
     } else {
       setSelectedSkills(selectedSkills.filter((s) => s !== skill));
     }
-    skillClickHandler && skillClickHandler(selectedSkills);
   };
 
   return (
     <>
-      {!skillClickHandler &&
+      {!selectable &&
         skills.map((skill) => {
           return (
             <StyledTag key={skill.name}>
@@ -74,7 +76,7 @@ export const Skills: React.FC<skillsProps> = ({
             </StyledTag>
           );
         })}
-      {skillClickHandler &&
+      {selectable &&
         skills.map((skill) => {
           return (
             <StyledCheckableTag
