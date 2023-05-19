@@ -35,12 +35,6 @@ export const MainContainer: React.FC = () => {
               }
             }}
           />
-          <Alert
-            message="This site is still under construction. I am updating it frequently so please check back later for more!"
-            type={"success"}
-            showIcon
-            closable
-          />
         </AntdHeader>
         <Content>
           <Outlet />

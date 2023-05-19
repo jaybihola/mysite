@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Space } from "antd";
-import { device } from "../../../helpers";
+import { colors, device } from "../../../helpers";
 
 // center the component using style
 export const AboutContainer = styled(Space)`
@@ -22,4 +22,8 @@ export const AboutContainer = styled(Space)`
   @media (${device.laptop}) {
     margin: 10vh 20vw;
   }
+`;
+
+export const Highlighted = styled.span`
+  color: ${colors.primary};
 `;

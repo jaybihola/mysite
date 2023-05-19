@@ -1,5 +1,14 @@
 import React, { ReactNode, useState } from "react";
-import { Button, CardProps, Col, Modal, Row, Space, Typography } from "antd";
+import {
+  Button,
+  CardProps,
+  Col,
+  Modal,
+  Row,
+  Space,
+  Tag,
+  Typography,
+} from "antd";
 import * as S from "./styles";
 import { Skills } from "../Skills";
 const { Text } = Typography;
@@ -7,6 +16,7 @@ const { Text } = Typography;
 interface CardModalListProps {
   entries: {
     header: string | ReactNode;
+    date?: { start: string; end: string };
     extra?: string | ReactNode;
     cardContent: string | ReactNode;
     footer?: string | ReactNode;
@@ -46,6 +56,28 @@ export const CardModalList: React.FC<CardModalListProps> = ({
     );
   };
 
+  const renderDate = (date?: CardModalListProps["entries"][0]["date"]) => {
+    if (!date) return null;
+
+    const today = new Date();
+
+    const start = new Date(date.start !== "present" ? date.start : today);
+    const end = new Date(date.end !== "present" ? date.end : today);
+
+    const start_month = start.toLocaleString("default", { month: "long" });
+    const start_year = start.getFullYear();
+    const end_month = end.toLocaleString("default", { month: "long" });
+    const end_year = end.getFullYear();
+
+    return (
+      <Space>
+        <Tag>
+          {start_month} {start_year}
+        </Tag>
+      </Space>
+    );
+  };
+
   const renderCard = (entry: CardModalListProps["entries"][0]) => {
     const skills = entry.skills?.map((skill) => {
       return {
@@ -54,7 +86,7 @@ export const CardModalList: React.FC<CardModalListProps> = ({
     });
 
     return (
-      <Col xs={24} sm={12} lg={8}>
+      <Col xs={24} sm={12} md={12} lg={8}>
         <S.StyledCard
           title={entry.header}
           extra={entry.extra}
@@ -63,13 +95,21 @@ export const CardModalList: React.FC<CardModalListProps> = ({
           clickable={!entry.disabled && !!entry.showModal}
           loading={loading}
           style={{ height: "100%", width: "100%" }}
+          onClick={() => {
+            if (!entry.showModal) return;
+            setShowModal(!showModal);
+            setModalTitle(entry.modalHeader || "");
+            setModalContent(entry.modalContent);
+            setModalFooter(entry.modalFooter);
+          }}
         >
-          <Space direction={"vertical"} align={"center"}>
+          <Space direction={"vertical"} align={"start"}>
             {entry.disabled && <Text>Details Coming Soon</Text>}
             {!entry.disabled && (
               <>
+                {/*{renderDate(entry.date)}*/}
                 <div>{entry.cardContent}</div>
-                {entry.showModal && (
+                {entry.modalButtonText && (
                   <Button
                     onClick={() => {
                       setShowModal(!showModal);

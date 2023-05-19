@@ -23,6 +23,7 @@ const StyledTag = styled(Tag)`
 
 const StyledCheckableTag = styled(CheckableTag)`
   transition: 0.1s;
+  margin-top: 4px;
   &:hover {
     //scale: 1.1;
     border: 1px solid ${colors.primary};

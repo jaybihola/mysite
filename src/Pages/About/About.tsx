@@ -1,7 +1,7 @@
 import react from "react";
 import { Space, Typography } from "antd";
 import React from "react";
-import { AboutContainer } from "./styles";
+import { AboutContainer, Highlighted } from "./styles";
 import { Skills } from "../../Components/Skills";
 import {
   frameworksSkills,
@@ -9,26 +9,24 @@ import {
   toolsSkills,
 } from "../Home/helpers";
 import { colors } from "../../../helpers";
+import styled from "styled-components";
 const { Title, Text } = Typography;
 
 export const About = () => {
-  console.log(screen.width);
   return (
     <AboutContainer direction="vertical" size={"small"}>
-      <Title level={3} style={{ color: `${colors.primary}` }}>
-        About Me
-      </Title>
+      <Title level={1}>About Me</Title>
       <Text>
-        I'm a software developer based out of Toronto and I have experience in a
-        variety of domains. I am passionate about programming and I love to
-        solve complex problems with unique solutions.
+        I'm a <Highlighted>software developer</Highlighted> based out of Toronto
+        and I have experience in a variety of domains. I am passionate about
+        programming and I love to solve complex problems with unique solutions.
       </Text>
 
       <Text>
-        I graduated from the University of Toronto in 2022 with a degree in
-        Computer Engineering, specializing in Software Development. Furthermore,
-        I have a double minor in artificial intelligence engineering and
-        engineering business.
+        I graduated from the <Highlighted>Univeresity of Toronto</Highlighted>{" "}
+        in 2022 with a degree in Computer Engineering, specializing in Software
+        Development. Furthermore, I have a double minor in artificial
+        intelligence engineering and engineering business.
       </Text>
 
       <Text>
