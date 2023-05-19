@@ -84,9 +84,12 @@ export const Projects: React.FC = () => {
                   Condition: {orFilterType ? "OR" : "AND"}
                 </Button>
                 <Button
-                  onClick={() => setFilters([])}
+                  onClick={() => {
+                    setFilters([]);
+                    setDomains([]);
+                  }}
                   style={{ marginRight: 8 }}
-                  disabled={filters.length === 0}
+                  disabled={filters.length === 0 && domains.length === 0}
                 >
                   Clear
                 </Button>
