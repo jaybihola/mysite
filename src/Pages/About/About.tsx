@@ -23,7 +23,12 @@ export const About = () => {
       </Text>
 
       <Text>
-        I graduated from the <Highlighted>Univeresity of Toronto</Highlighted>{" "}
+        I am currently working at <Highlighted>TripStack</Highlighted> as a Software Engineer II on the content team.
+        I help ensure TripStack has <Highlighted>top notch integrations</Highlighted> with various airlines.
+      </Text>
+
+      <Text>
+        I graduated from the <Highlighted>University of Toronto</Highlighted>{" "}
         in 2022 with a degree in Computer Engineering, specializing in Software
         Development. Furthermore, I have a double minor in artificial
         intelligence engineering and engineering business.

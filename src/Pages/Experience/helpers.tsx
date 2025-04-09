@@ -1,16 +1,84 @@
 import React from "react";
-import { Space, Typography } from "antd";
+import {Space, Typography} from "antd";
 import gb from "../../Photos/gb.png";
-import { Skills } from "../../Components/Skills";
-const { Title, Text } = Typography;
+import ts from "../../Photos/ts.avif"
+import {Skills} from "../../Components/Skills";
+import {Highlighted} from "../About/styles";
+
+const {Title, Text} = Typography;
 export const panel = [
+  {
+    header: <Text strong>Software Engineer II @ TripStack</Text>,
+    extra: <Text>June 2023 - Present</Text>,
+    content: (
+      <Space direction="vertical">
+        <Space direction={"horizontal"} wrap>
+          <img src={ts} alt="GoBolt" style={{maxWidth: 200}}/>
+          <Space direction={"vertical"}>
+            <Text>
+              Software Engineer II at
+              <a href="https://www.tripstack.com/"> TripStack</a> working on the
+              content team. Responsible for integrating airlines and facilitating the smooth transfer of data to our
+              other teams.
+            </Text>
+            <Text>
+              Implemented many features that facilitate TripStack's goal of having <Highlighted>EVERY FLIGHT ON
+              EARTH.</Highlighted>
+            </Text>
+          </Space>
+        </Space>
+        <Space
+          direction={"vertical"}
+          size={"small"}
+          align={"start"}
+          style={{width: `100%`}}
+        >
+          <Title level={5}>Skills Used:</Title>
+          <Skills
+            skills={[
+              {
+                name: "C#",
+                icon: "https://cdn.svgporn.com/logos/c-sharp.svg",
+              },
+              {
+                name: ".Net",
+                icon: "https://cdn.svgporn.com/logos/dotnet.svg",
+              },
+              {
+                name: "PostgreSQL",
+                icon: "https://cdn.svgporn.com/logos/postgresql.svg",
+              },
+              {
+                name: "React",
+                icon: "https://cdn.svgporn.com/logos/react.svg",
+              },
+              {
+                name: "Express",
+                icon: "https://img.icons8.com/color/100/000000/express.png",
+              }
+            ]}
+          />
+        </Space>
+      </Space>
+    ),
+    showModal: false,
+    modalButtonText: "Details and Achievements",
+    modalContent: (
+      <Text>
+        Software Engineer at{" "}
+        <a href="https://www.athenahealth.com/">athenahealth</a> working on the{" "}
+        <a href="https://www.athenahealth.com/products/athenaone">athenaOne</a>{" "}
+        platform.
+      </Text>
+    ),
+  },
   {
     header: <Text strong>Full Stack Software Developer @ GoBolt</Text>,
     extra: <Text>May 2022 - May 2023</Text>,
     content: (
       <Space direction="vertical">
         <Space direction={"horizontal"} wrap>
-          <img src={gb} alt="GoBolt" style={{ maxWidth: 200 }} />
+          <img src={gb} alt="GoBolt" style={{maxWidth: 200}}/>
           <Space direction={"vertical"}>
             <Text>
               Software Developer at
@@ -28,7 +96,7 @@ export const panel = [
           direction={"vertical"}
           size={"small"}
           align={"start"}
-          style={{ width: `100%` }}
+          style={{width: `100%`}}
         >
           <Title level={5}>Skills Used:</Title>
           <Skills
@@ -37,7 +105,7 @@ export const panel = [
                 name: "Typescript",
                 icon: "https://cdn.svgporn.com/logos/typescript-icon.svg",
               },
-              { name: "Ruby", icon: "https://cdn.svgporn.com/logos/ruby.svg" },
+              {name: "Ruby", icon: "https://cdn.svgporn.com/logos/ruby.svg"},
               {
                 name: "PostgreSQL",
                 icon: "https://cdn.svgporn.com/logos/postgresql.svg",
@@ -75,7 +143,7 @@ export const panel = [
           <img
             src={"https://www.husky.co/globalassets/huskylogo-red.svg"}
             alt="Husky"
-            style={{ width: `100%`, maxWidth: 250 }}
+            style={{width: `100%`, maxWidth: 250}}
           />
           <Space direction={"vertical"}>
             <Text>
@@ -101,7 +169,7 @@ export const panel = [
           direction={"vertical"}
           size={"small"}
           align={"start"}
-          style={{ width: `100%` }}
+          style={{width: `100%`}}
         >
           <Title level={5}>Skills Used:</Title>
           <Skills
@@ -110,7 +178,7 @@ export const panel = [
                 name: "C#",
                 icon: "https://cdn.svgporn.com/logos/c-sharp.svg",
               },
-              { name: "Ruby", icon: "https://cdn.svgporn.com/logos/ruby.svg" },
+              {name: "Ruby", icon: "https://cdn.svgporn.com/logos/ruby.svg"},
               {
                 name: "PostgreSQL",
                 icon: "https://cdn.svgporn.com/logos/postgresql.svg",
@@ -164,7 +232,7 @@ export const panel = [
           direction={"vertical"}
           size={"small"}
           align={"start"}
-          style={{ width: `100%` }}
+          style={{width: `100%`}}
         >
           <Title level={5}>Skills Used:</Title>
           <Skills
